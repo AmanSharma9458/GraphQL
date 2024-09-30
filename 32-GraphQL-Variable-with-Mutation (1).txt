@@ -1,0 +1,39 @@
+mutation createStudent ($createStudentRequest : CreateStudentRequest) {
+  createStudent (createStudentRequest : $createStudentRequest) {
+    id
+    firstName
+    lastName
+    email
+    street
+    city
+    learningSubjects(subjectNameFilter : All) {
+      id
+      subjectName
+      marksObtained
+    }
+    fullName
+  }
+}
+
+---------------
+
+{
+	"id": 5,
+	"firstName": "Peter",
+	"lastName": "John",
+	"email": "peter@gmail.com",
+	"street": "Down the street",
+	"city": "New York",
+	"learningSubjects": [
+		{
+			"id": 10,
+			"subjectName": "Java",
+			"marksObtained": 55.0
+		},
+		{
+			"id": 11,
+			"subjectName": "PHP",
+			"marksObtained": 50.0
+		}
+	]
+}
